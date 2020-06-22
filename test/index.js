@@ -1,6 +1,16 @@
 import MultiMap from '../dist/index.js'
 
 describe('multimap', function () {
+  it('initializes from an iterable', function () {
+    const map = new MultiMap([
+      ['k1', 1],
+      ['k1', 2],
+      ['k2', 3]
+    ])
+    assert.deepEqual([1, 2], [...map.get('k1')])
+    assert.deepEqual([3], [...map.get('k2')])
+  })
+
   it('size measures keys not values', function () {
     const map = new MultiMap()
     assert.equal(0, map.size)

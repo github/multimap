@@ -1,6 +1,14 @@
 export default class MultiMap<K, V> {
   private map: Map<K, Set<V>> = new Map()
 
+  constructor(iterable?: Iterable<[K, V]>) {
+    if (iterable) {
+      for (const [k, v] of iterable) {
+        this.set(k, v)
+      }
+    }
+  }
+
   get(key: K): Set<V> {
     const values = this.map.get(key)
     return values ? values : new Set()
