@@ -25,6 +25,11 @@ map.has('a') // => true
 map.size // => 1
 ```
 
+### Constructors
+
+- `MultiMap()` - Create an empty map.
+- `MultiMap(iterable)` - Create a map with values from an iterable yielding key value pairs: `new MultiMap([['k', 1], ['k', 2]])`
+
 ### Methods
 
 - `get(key)` - Retrieve the Set of values stored under a key or the empty Set if the key does not exist.
