@@ -28,11 +28,11 @@ map.size // => 1
 ### Methods
 
 - `get(key)` - Retrieve the Set of values stored under a key or the empty Set if the key does not exist.
-- `set(key, value)` - Add a value to the key's set without removing previous values.
+- `set(key, value)` - Add a value to the key's set without removing previous values. Returns the map so `set` can be chained.
 - `has(key)` - Returns true if a value is stored under the key.
-- `delete(key)` - Remove key and all of key's values.
-- `delete(key, value)` - Remove a value from the key's set.
-- `drain(value)` - Remove a value from all keys that reference it.
+- `delete(key)` - Remove key and all of key's values. Returns true if the key existed.
+- `delete(key, value)` - Remove a value from the key's set. Returns true if the key and value existed.
+- `drain(value)` - Remove a value from all keys that reference it. Returns an array of keys removed.
 - `clear()` - Remove all keys and values to empty the map.
 - `keys()` - An iterator of map keys.
 - `values()` - An iterator of Sets of values for all keys.
