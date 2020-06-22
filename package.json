@@ -1,7 +1,7 @@
 {
   "name": "@github/multimap",
   "version": "0.1.0",
-  "description": "Store multiple values under each map key.",
+  "description": "A map in which more than one value may be stored under each key.",
   "main": "dist/index.js",
   "type": "module",
   "module": "dist/index.js",
