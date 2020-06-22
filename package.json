@@ -25,15 +25,15 @@
   "devDependencies": {
     "@github/prettier-config": "0.0.4",
     "chai": "^4.1.2",
-    "eslint": "^7.0.0",
-    "eslint-plugin-github": "^3.4.1",
-    "mocha": "^7.1.2",
-    "typescript": "^3.9.3"
+    "eslint": "^7.3.0",
+    "eslint-plugin-github": "^4.0.1",
+    "mocha": "^8.0.1",
+    "typescript": "^3.9.5"
   },
   "eslintConfig": {
     "extends": [
       "plugin:github/browser",
-      "plugin:github/es6",
+      "plugin:github/recommended",
       "plugin:github/typescript"
     ]
   }
