@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/extensions
 import MultiMap from '../dist/index.js'
 import {assert} from 'chai'
 
@@ -6,7 +7,7 @@ describe('multimap', function () {
     const map = new MultiMap([
       ['k1', 1],
       ['k1', 2],
-      ['k2', 3]
+      ['k2', 3],
     ])
     assert.deepEqual([1, 2], [...map.get('k1')])
     assert.deepEqual([3], [...map.get('k2')])
@@ -141,9 +142,9 @@ describe('multimap', function () {
     assert.deepEqual(
       [
         [1, 2],
-        [3, 4]
+        [3, 4],
       ],
-      [...map.values()].map(set => [...set])
+      [...map.values()].map(set => [...set]),
     )
   })
 
@@ -154,9 +155,9 @@ describe('multimap', function () {
     assert.deepEqual(
       [
         ['k1', 1, 2],
-        ['k2', 3, 4]
+        ['k2', 3, 4],
       ],
-      [...map.entries()].map(([key, set]) => [key, ...set])
+      [...map.entries()].map(([key, set]) => [key, ...set]),
     )
   })
 
@@ -167,9 +168,9 @@ describe('multimap', function () {
     assert.deepEqual(
       [
         ['k1', 1, 2],
-        ['k2', 3, 4]
+        ['k2', 3, 4],
       ],
-      [...map].map(([key, set]) => [key, ...set])
+      [...map].map(([key, set]) => [key, ...set]),
     )
   })
 })
