@@ -14,21 +14,21 @@
   "scripts": {
     "clean": "rm -rf dist",
     "lint": "eslint src/*.ts test/*.js",
-    "prebuild": "npm run clean && npm run lint",
+    "prebuild": "npm run clean",
     "build": "tsc",
-    "pretest": "npm run build",
-    "test": "mocha -r chai/register-assert",
+    "pretest": "npm run build && npm run lint",
+    "test": "mocha",
     "prepublishOnly": "npm run build",
     "postpublish": "npm publish --ignore-scripts --@github:registry='https://npm.pkg.github.com'"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
-    "@github/prettier-config": "0.0.4",
-    "chai": "^4.1.2",
-    "eslint": "^7.5.0",
-    "eslint-plugin-github": "^4.1.1",
-    "mocha": "^8.0.1",
-    "typescript": "^3.9.7"
+    "@github/prettier-config": "0.0.6",
+    "chai": "^4.3.8",
+    "eslint": "^8.49.0",
+    "eslint-plugin-github": "^4.10.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2"
   },
   "eslintConfig": {
     "extends": [
