@@ -17,17 +17,17 @@
     "prebuild": "npm run clean && npm run lint",
     "build": "tsc",
     "pretest": "npm run build",
-    "test": "mocha -r chai/register-assert",
+    "test": "mocha",
     "prepublishOnly": "npm run build",
     "postpublish": "npm publish --ignore-scripts --@github:registry='https://npm.pkg.github.com'"
   },
   "prettier": "@github/prettier-config",
   "devDependencies": {
     "@github/prettier-config": "0.0.4",
-    "chai": "^4.1.2",
+    "chai": "^4.3.8",
     "eslint": "^7.5.0",
     "eslint-plugin-github": "^4.1.1",
-    "mocha": "^8.0.1",
+    "mocha": "^10.2.0",
     "typescript": "^3.9.7"
   },
   "eslintConfig": {

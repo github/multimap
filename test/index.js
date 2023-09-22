@@ -1,4 +1,5 @@
 import MultiMap from '../dist/index.js'
+import {assert} from 'chai'
 
 describe('multimap', function () {
   it('initializes from an iterable', function () {
