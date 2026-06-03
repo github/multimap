@@ -27,7 +27,7 @@
     "chai": "^4.3.8",
     "eslint": "^8.49.0",
     "eslint-plugin-github": "^4.10.0",
-    "mocha": "^10.2.0",
+    "mocha": "^11.7.6",
     "serialize-javascript": "^7.0.5",
     "typescript": "^5.2.2"
   },
