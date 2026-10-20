@@ -31,9 +31,9 @@ export default class MultiMap<K, V> {
   delete(key: K, value?: V): boolean {
     const values = this.map.get(key)
     if (!values) return false
-    if (!value) return this.map.delete(key)
+    if (arguments.length === 1) return this.map.delete(key)
 
-    const deleted = values.delete(value)
+    const deleted = values.delete(value as V)
     if (!values.size) this.map.delete(key)
     return deleted
   }

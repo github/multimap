@@ -98,6 +98,31 @@ describe('multimap', function () {
     assert.deepEqual([2], [...map.get('k')])
   })
 
+  for (const value of [0, false, '', null, undefined, NaN]) {
+    it(`deletes only the requested falsy value ${String(value)}`, function () {
+      const map = new MultiMap([
+        ['k', value],
+        ['k', 'keep'],
+      ])
+      assert.isTrue(map.delete('k', value))
+      assert.deepEqual([...map.get('k')], ['keep'])
+      assert.isFalse(map.delete('k', value))
+      assert.deepEqual([...map.get('k')], ['keep'])
+    })
+  }
+
+  it('drains a falsy value without deleting unrelated values', function () {
+    const map = new MultiMap([
+      ['mixed', 0],
+      ['mixed', 1],
+      ['only', 0],
+      ['other', 2],
+    ])
+    assert.deepEqual(map.drain(0), ['only'])
+    assert.deepEqual([...map.get('mixed')], [1])
+    assert.deepEqual([...map.get('other')], [2])
+  })
+
   it('delete last value for key deletes the key', function () {
     const map = new MultiMap()
     map.set('k', 1)
